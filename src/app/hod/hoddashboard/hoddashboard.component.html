@@ -1,0 +1,84 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 col-lg-2">
+      <div class="sidebar">
+        <div class="login-logo">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEiRt1ykV-03O_RWW6M3hO2vme-JJS9U0L9g&usqp=CAU"
+            alt="Institute Logo">
+          <h2>Institute of Management</h2>
+        </div>
+        <ul>
+          <li>Home</li>
+          <li>Contact</li>
+          <li class="hover" [routerLink]="['/hoddashboard', 'viewleave']">Staff Overview</li>
+          <!-- <li class="hover" routerLink='/viewleave'>Staff Overview</li> -->
+          <li>Leave Overview</li>
+        </ul>
+        <button class="btn btn-primary" (click)="toggleMenu()"> Menu</button>
+      </div>
+    </div>
+    <div class="col-md-10 col-lg-10 main">
+      <div class="overview-heading leave-overview ">
+        <h1>Leave Overview</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="details">
+
+            <div class="row">
+              <div class="col-md-6 mb-4 username">Username:{{username}}(HOD)</div>
+              <div class="col-md-6 mb-4 department">Department:{{department}}</div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <!-- <mat-dialog-actions> -->
+                <button class="btn btn-primary" [routerLink]="['/hoddashboard', 'viewleave']">Staff Overview</button>
+                <!-- <button class="btn btn-primary" routerLink='/viewleave'>Staff Overview</button> -->
+                <!-- </mat-dialog-actions> -->
+              </div>
+              <div class="col-md-6 mb-4 mr-auto"> <button class="btn btn-danger" (click)="signout()">Sign Out</button>
+              </div>
+            </div>
+
+          </div>
+          <div class="row mt-4 mb-4">
+            <!-- <ng-container *ngIf="leaveArr.length"> -->
+            <ng-container *ngFor="let leave of leaveArr">
+              <div class="col-lg-4 mb-3">
+                <div class="card">
+                  <div class="card-body font-weight-bold  text-center">
+                    <h3>{{leave.fName}}  {{leave.lName}}</h3>
+                    <p>Leave From {{leave.leaveStart}} to {{leave.leaveEnd}}</p>
+                    <p>Number of days = {{leave.leaveDays}}</p>
+                    <h4 class="font-weight-bolder">Reason :</h4>
+                    <p>{{leave.leaveReason}}</p>
+                    <h4 class="font-weight-bolder">Status :</h4>
+                    <p>{{leave.statusLeave}}</p>
+                    <div class="row" *ngIf="!(leave.statusLeave == 'Approved') && !(leave.statusLeave == 'Rejected') ">
+                      <div class="col-6">
+                        <button class="btn btn-primary btn-block" (click)="onApprove(leave)">Approve</button>
+                      </div>
+                      <div class="col-6">
+                        <button class="btn btn-danger btn-block" (click)="onReject(leave)">Reject</button>
+                      </div>
+                    </div>
+                    <!-- </div>
+                              </div> -->
+                    <p class="text-success font-weight-bolder" *ngIf="leave.statusLeave == 'Approved'"><span><i
+                          class="fa fa-check fa-2x mr-2" aria-hidden="true"></i></span><span
+                        class="font">Approved</span></p>
+                    <p class="text-danger font-weight-bolder" *ngIf="leave.statusLeave == 'Rejected'"><span><i
+                          class="fa fa-check fa-2x mr-2" aria-hidden="true"></i></span><span
+                        class="font">Rejected</span></p>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+
+
+<button mat-icon-button style="float: right; margin: 5px;" matDialogClose>
+        <mat-icon>close</mat-icon>
+</button>
+  <header class="heading">
+    Apply Leave
+  </header>
+    <form class="m-4">
+      <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>From date</mat-label>
+          <input matInput name="fromdate" [(ngModel)]="startDate" [matDatepicker]="picker">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>TO date</mat-label>
+          <input matInput name="todate" [(ngModel)]="endDate" [matDatepicker]="picker1">
+          <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Reason for leave</mat-label>
+          <textarea name="reason" [(ngModel)]="reason" matInput placeholder="Reason for leave"></textarea>
+        </mat-form-field>
+    </form>
+  
+    <div class="buttons" align="end">
+      <button (click)="apply()" mat-raised-button color="primary" matDialogClose>Apply</button>&nbsp;
+      <button mat-raised-button color="warn" matDialogClose>Cancel</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <mat-card class="example-card">
+    <mat-card-content class="heading">Apply leave</mat-card-content>
+  <form class="example-form">
+    <mat-form-field class="example-full-width"  appearance="outline">
+      <mat-label>Employee id</mat-label>
+      <input matInput name="eid" [(ngModel)]="leave.eid" placeholder="enter id" >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input matInput name="fromdate" [(ngModel)]="leave.fromdate" [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>TO date</mat-label>
+        <input matInput name="todate" [(ngModel)]="leave.todate" [matDatepicker]="picker1">
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Reason for leave</mat-label>
+        <textarea name="reason" [(ngModel)]="leave.reason" matInput placeholder="Reason for leave"></textarea>
+      </mat-form-field>
+      
+  </form>
+
+  <div class="buttons">
+    <button (click)="apply()" mat-raised-button color="primary">Apply</button>&nbsp;
+    <button routerLink="viewleave" mat-raised-button color="accent">Accent</button>
+  </div>
+</mat-card> -->
+  
+
+  <!-- <form class="example-form">
+        <mat-form-field class="example-form-field" appearance="outline">
+            <mat-label>Employee Id</mat-label>
+            <input matInput type="text" placeholder="please enter employee id" >
+          </mat-form-field>
+  </form> -->
+  

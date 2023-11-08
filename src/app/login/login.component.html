@@ -1,0 +1,41 @@
+<app-header></app-header>
+<section class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 login-container">
+                <div class="login-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEiRt1ykV-03O_RWW6M3hO2vme-JJS9U0L9g&usqp=CAU" alt="Institute Logo">
+                    <h2>Institute of Management</h2>
+                </div>
+                <form [formGroup]="reactobj" (ngSubmit)="OnSubmit()">
+                    <div class="form-group mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control"  placeholder="Username" formControlName="username">
+                        <ng-container *ngIf="reactobj.get('username').touched && reactobj.get('username').hasError('required')">
+                            <h5 style="color: red;">*Username name is required</h5>
+                        </ng-container>
+                        <!-- <ng-container *ngIf="reactobj.get('username').touched && !reactobj.get('username').valid">
+                            <h5 style="color: red;">*Please enter valid username</h5>
+                        </ng-container> -->
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control"  placeholder="Password" formControlName="password">
+                        <ng-container  *ngIf="reactobj.get('password').touched && reactobj.get('password').hasError('required')">
+                            <h5 style="color: red;">*Password is required</h5>
+                        </ng-container>
+                        <!-- <ng-container *ngIf="reactobj.get('password').touched && !reactobj.get('password').valid">
+                            <h5 style="color: red;">*Please enter valid password</h5>
+                        </ng-container> -->
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block"  [disabled]="reactobj.invalid">Login</button>
+                </form>
+                <span *ngIf="isNewUser" class="sub-heading">Not Register Yet ? <a routerLink='/registration' class="text-primary">Register</a></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+

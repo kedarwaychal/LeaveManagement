@@ -1,0 +1,47 @@
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #e7e1e1;
+    border-radius: 5px;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: space-between;
+    margin: 0 20px;
+  }
+  .button{
+    justify-content: space-around;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .ng-invalid.ng-touched.form-control{
+    border : 1px solid red;
+} 
+
+.no-spinners::-webkit-inner-spin-button,
+.no-spinners::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}

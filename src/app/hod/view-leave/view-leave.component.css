@@ -1,0 +1,21 @@
+table{
+ width: 100%;
+}
+/* .search{
+    margin-left: 30px;
+    border-radius: 10px;
+} */
+/* 
+.search-form{
+    width: 300px; 
+    display: flex;
+    align-items: center;
+} */
+
+.search-form input{
+    flex: 1;
+}
+
+.example-icon{
+    margin-right: 8px;
+}

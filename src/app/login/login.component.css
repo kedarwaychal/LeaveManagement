@@ -1,0 +1,30 @@
+body {
+    background-color: #f0f0f0;
+}
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 100px;
+}
+.login-logo {
+    text-align: center;
+}
+.login-logo img {
+    width: 80px;
+    height: 80px;
+}
+.login-logo h2 {
+    margin-top: 10px;
+}
+
+.ng-invalid.ng-touched.form-control{
+    border : 1px solid red;
+} 
+
+.footer-bottom{
+    text-align: center;
+}

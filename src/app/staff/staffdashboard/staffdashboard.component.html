@@ -1,0 +1,102 @@
+<app-header></app-header>
+<section class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="sidebar">
+          <div class="login-logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEiRt1ykV-03O_RWW6M3hO2vme-JJS9U0L9g&usqp=CAU"
+              alt="Institute Logo">
+            <h2>Institute of Management</h2>
+          </div>
+          <ul>
+            <li>Home</li>
+            <li>Contact</li>
+            <li class="hover" routerLink='/viewleave'>Leave Overview</li>
+          </ul>
+          <button class="btn btn-primary" (click)="toggleMenu()">Menu</button>
+        </div>
+      </div>
+      <div class="col-md-10 main">
+        <div class="overview-heading leave-overview ">
+          <h1>Leave &nbsp;Overview</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="details">
+              <div class="row">
+                <div class="col-md-6 mb-4 username text-center">Username:{{username}}</div>
+                <div class="col-md-6 mb-4 department text-center">Department:{{department}}</div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <mat-dialog-actions>
+                    <button class="btn btn-primary d-flex justify-content-between" (click)="openDialog()">Apply
+                      Leave</button>
+                  </mat-dialog-actions>
+                </div>
+                <div class="col-md-6 mb-4"> <button class="btn btn-danger" (click)="signout()">Sign Out</button></div>
+              </div>
+            </div>
+          </div>
+          <div class="row custom-row">
+          <!-- <h1 class="text-center">Staff Leave Dashboard</h1> -->
+            <div class="col-sm-6 col-md-3  mt-2 mb-2">
+              <div class="card text-center">
+                <div class="card-body text-center">
+                  <h2 class="card-title">Total <br>Leaves</h2>
+                  <p class="card-text">{{details.totalLeaves}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3  mt-2 mb-2">
+              <div class="card text-center">
+                <div class="card-body text-center">
+                  <h2 class="card-title">Assigned Leaves</h2>
+                  <p class="card-text">{{details.assignedLeaves}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3  mt-2 mb-2">
+              <div class="card text-center">
+                <div class="card-body text-center">
+                  <h2 class="card-title">Rejected Leaves</h2>
+                  <p class="card-text">{{details.rejectedleave}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3  mt-2 mb-2">
+              <div class="card text-center">
+                <div class="card-body text-center">
+                  <h2 class="card-title">Approved Leaves</h2>
+                  <p class="card-text">{{details.approvedleave}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <ng-container *ngIf="leaveArr.length">
+            <ng-container *ngFor="let leave of leaveArr">
+              <div class="col-md-6 col-lg-4  mb-3">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <p class="date-range">Leave From {{leave.leaveStart}} to {{leave.leaveEnd}}</p>
+                    <p class="leave-days">Number of days: {{leave.leaveDays}}</p>
+                    <h4 class="heading">Reason:</h4>
+                    <p class="leave-reason">{{leave.leaveReason}}</p>
+                    <h4 class="heading">Status:</h4>
+                    <p class="leave-status {{leave.statusLeave.toLowerCase()}}">{{leave.statusLeave}}</p>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

@@ -1,0 +1,169 @@
+.leave-overview {
+    text-align: center;
+    background-color:  #8eafd2; 
+    color: #fff;
+    border: 1px solid #ccc;
+    padding: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.custom-row{
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.details{
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px solid black;
+    margin-top: 10px;
+}
+.username, .department {
+    font-size: 23px;
+    color: #666;
+    margin: 10px 0;
+    font-style: italic;
+
+  }
+
+
+.container {
+    text-align: center;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  
+  .card-body {
+    text-align: left;
+  }
+  
+  .date-range, .leave-days {
+    font-weight: bold;
+  }
+  
+  .heading {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .leave-reason, .leave-status {
+    margin-top: 5px;
+  }
+  
+  .approved {
+    color: green;
+  }
+  
+  .rejected {
+    color: red;
+  }
+  
+  .leave-status {
+    text-align: center;
+  }
+  
+
+  @media (max-width: 940px) {
+    .sidebar {
+      display: none;
+    }
+
+    
+      .username, .department{
+        font-size: 15px;
+        text-align: center;
+      }
+
+      .custom-row .card-body{
+        font-size: 20px;
+      }
+       
+    
+     
+  }
+  
+    
+  
+  @media (min-width: 940px) {
+    .sidebar {
+      width :180px;
+    }
+  }
+  
+    
+  
+    .sidebar {
+      height: 100%;
+      position: fixed;
+      left: 0;
+      margin-top:60px;
+      transition: width 0.3s;
+      background-color:  #8eafd2; 
+      color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+    
+    
+    .collapsed {
+      width: 60px;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    li {
+      padding: 10px;
+    }
+  
+    .sidebar ul li:hover{
+      background-color: #1f7eea;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  
+    .hover{
+      background-color: #1f7eea;
+      border-radius: 10px;
+    }
+  
+  
+    
+    button {
+      display: block;
+      margin: 10px auto;
+    }
+  
+    .login-logo {
+      text-align: center;
+  }
+  .login-logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+  }
+  .login-logo h2 {
+      margin-top: 30px;
+  }
+    
+  .main{
+    margin-top: 60px;
+  }
+  
+    
+  
+  
+  
+
+
