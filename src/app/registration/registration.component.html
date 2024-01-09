@@ -20,6 +20,7 @@
                     <h5 style="color: red;">*LastName is required</h5>
                 </ng-container> -->
                 </div>
+              
           </div>
           <div class="form-row">
               <div class="form-group col-md-6">
@@ -78,6 +79,16 @@
                     <option value="Staff">Staff</option>
                   </select>
                 </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <div class="form-control" formArrayname="reactObj">
+                    <label for="">kl</label>
+                    <div *ngFor="let lang of this.registrationForm.get('knownlam').control; let i = index">
+                          <input type="text" formControlName="i">
+                    </div>
+              </div>
+            </div>
           </div>
           <div class="col-md-6 offset-md-3 mt-4">
             <div class="button">

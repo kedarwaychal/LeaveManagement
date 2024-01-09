@@ -24,6 +24,8 @@ export class RegistrationComponent {
       role: ['HOD', Validators.required]
     });
   }
+
+  
   onSubmit() {
     if (this.registrationForm.valid) {
       console.log('Form submitted:', this.registrationForm);
