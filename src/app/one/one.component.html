@@ -1,0 +1,38 @@
+<p>one works!</p>
+
+<div class="input">
+    <input type="text" [(ngModel)]="searchtext" (keyup)="onclick()" placeholder="Search Here">
+</div>
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>name</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let post of posts">
+                <td>{{ post.firstName }}</td>
+                <td>{{post.username}}</td>
+                <td>{{post.contact}}</td>
+                <td>{{post.email}}</td>
+                <td>{{post.department}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal-overlay">
+    <div class="modal-content">
+        <h2>Modal conteent here</h2>
+        <p>This is modal content</p>
+        <button (click)="closemodal()">Close</button>
+    </div>
+</div>
+
+<app-subone></app-subone>

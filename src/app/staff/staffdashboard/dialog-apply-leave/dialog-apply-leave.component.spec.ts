@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DialogApplyLeaveComponent } from './dialog-apply-leave.component';
+import { ApplyLeaveComponent } from '../../apply-leave/apply-leave.component';
 
 describe('DialogApplyLeaveComponent', () => {
-  let component: DialogApplyLeaveComponent;
-  let fixture: ComponentFixture<DialogApplyLeaveComponent>;
+  let component: ApplyLeaveComponent;
+  let fixture: ComponentFixture<ApplyLeaveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogApplyLeaveComponent ]
+      declarations: [ ApplyLeaveComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DialogApplyLeaveComponent);
+    fixture = TestBed.createComponent(ApplyLeaveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

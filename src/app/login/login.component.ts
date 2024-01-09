@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-
+  
+  buttonClicked : boolean = false;
 
   constructor(private httpserve : HttphandlerService,private router :Router){}
 
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit{
   isNewUser: boolean = true;
 
   username : any;
+
 
   ngOnInit(){
     this.forminit();
@@ -30,6 +32,10 @@ export class LoginComponent implements OnInit{
       username : new FormControl('',[Validators.required,Validators.email]),
       password:new FormControl('',[Validators.required,Validators.minLength(6)])
     })
+  }
+  onClick(){
+    
+    console.log('test is successful!')
   }
 
   OnSubmit(){

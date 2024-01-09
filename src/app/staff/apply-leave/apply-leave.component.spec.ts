@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ApplyLeaveComponent } from './apply-leave.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ApplyLeaveComponent', () => {
   let component: ApplyLeaveComponent;
@@ -8,7 +9,8 @@ describe('ApplyLeaveComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ApplyLeaveComponent]
+      declarations: [ApplyLeaveComponent],
+      imports:[HttpClientModule]
     });
     fixture = TestBed.createComponent(ApplyLeaveComponent);
     component = fixture.componentInstance;

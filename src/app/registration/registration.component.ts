@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttphandlerService } from '../shared/http-handler.service';
 import { Router } from '@angular/router';
 import { user } from '../interface/user';
+import { restname } from '../shared/restrictedvalue.validator';
 
 @Component({
   selector: 'app-registration',
@@ -25,7 +26,7 @@ export class RegistrationComponent {
   }
   onSubmit() {
     if (this.registrationForm.valid) {
-      console.log('Form submitted:', this.registrationForm.value);
+      console.log('Form submitted:', this.registrationForm);
 
       let obj1 = {
         username : this.registrationForm.value.username,

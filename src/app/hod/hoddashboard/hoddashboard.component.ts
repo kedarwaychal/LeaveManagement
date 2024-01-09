@@ -13,6 +13,7 @@ import { user } from '../../interface/user';
 export class HoddashboardComponent implements OnInit{
 
   liClass: string = '';
+  imgurl: string = "https://s3.ivisa.com/website-assets/blog/-portugal-photo-size-requirements.webp";
 
 leaveArr : any;
 department = localStorage.getItem('dept');

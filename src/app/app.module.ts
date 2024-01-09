@@ -13,7 +13,6 @@ import { AppComponent } from './app.component';
 // import {MatToolbarModule} from '@angular/material/toolbar';
 // import {MatTableModule} from '@angular/material/table';
 // import {MatIconModule} from '@angular/material/icon';
-import { UpdateLeaveComponent } from './hod/update-leave/update-leave.component';
 // import { HttpClientModule } from '@angular/common/http';
 // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
@@ -22,7 +21,7 @@ import { RegistrationComponent } from './registration/registration.component';
 // import { StaffdashboardComponent } from './staffdashboard/staffdashboard.component';
 // import { HoddashboardComponent } from './hoddashboard/hoddashboard.component';
 // import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { Authguard } from './shared/auth-guard.service';
+import { Authguard } from './auth/auth-guard.service';
 // import { SharedModule } from './shared/shared.module';
 // import { MatPaginatorModule } from '@angular/material/paginator';
 
@@ -31,23 +30,33 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HttphandlerService } from './shared/http-handler.service';
 import { ErrordialogueComponent } from './errordialogue/errordialogue.component';
-import { Authguardlogin } from './shared/auth-login.service';
+import { Authguardlogin } from './auth/auth-login.service';
 import { PermissiondeniedComponent } from './permissiondenied/permissiondenied.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { Jwtinterceptor } from './auth/auth.interceptor';
 import { FooterComponent } from './footer/footer.component';
+import { Titlecase } from './shared/titleCase.pipe';
+import { Headinterceptor } from './auth/header.intercept';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { OneComponent } from './one/one.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SuboneComponent } from './one/subone/subone.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     // ApplyLeaveComponent,
     // ViewLeaveComponent,
-    UpdateLeaveComponent,
     LoginComponent,
     // HeaderComponent,
     RegistrationComponent,
     ErrordialogueComponent,
     PermissiondeniedComponent,
+    Titlecase,
+    OneComponent,
+    SuboneComponent
     // FooterComponent,
     // StaffdashboardComponent,
     // HoddashboardComponent,
@@ -56,8 +65,10 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     SharedModule,
     BrowserAnimationsModule,
+    MatCheckboxModule,
     // MatDatepickerModule,
     // MatCardModule,
     // MatFormFieldModule,
@@ -77,7 +88,13 @@ import { FooterComponent } from './footer/footer.component';
     provide : HTTP_INTERCEPTORS,
     useClass : Jwtinterceptor,
     multi : true
-  }],
+  },
+  // {
+  //   provide:HTTP_INTERCEPTORS,
+  //   useClass:Headinterceptor,
+  //   multi:true
+  // }
+],
   exports:[
   ],
   bootstrap: [AppComponent]

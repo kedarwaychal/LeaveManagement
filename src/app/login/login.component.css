@@ -28,3 +28,13 @@ body {
 .footer-bottom{
     text-align: center;
 }
+ .custom{
+    background-color: orange;
+}
+
+
+::ng-deep .custom-checkbox .mat-checkbox{
+    background-color: blue;
+    border: 3px solid red;  
+}
+  

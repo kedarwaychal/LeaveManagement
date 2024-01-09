@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StaffdashboardComponent } from './staffdashboard/staffdashboard.component';
 import { ApplyLeaveComponent } from './apply-leave/apply-leave.component';
 import { SharedModule } from '../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const staffroutes : Routes = [
 //   {path :'',component: StaffdashboardComponent,
@@ -19,9 +20,10 @@ const staffroutes : Routes = [
 @NgModule({
   declarations: [
     StaffdashboardComponent,
-    ApplyLeaveComponent
+    ApplyLeaveComponent,
   ],
   imports: [
+    HttpClientModule,
     SharedModule,
     RouterModule.forChild(staffroutes)
   ]

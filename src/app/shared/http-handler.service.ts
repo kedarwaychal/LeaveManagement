@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, Subject, catchError, map, tap, throwError } from "rxjs";
+import { Observable, Subject, catchError, filter, map, tap, throwError } from "rxjs";
 import { ErrordialogueComponent } from "../errordialogue/errordialogue.component";
 import { MatDialog } from "@angular/material/dialog";
 
@@ -110,6 +110,7 @@ export class HttphandlerService{
             for(let user in rawData){
                 arr.push({...rawData[user],id : user})
             }
+            console.log(arr)
             return arr
         }),
         catchError((errD : any)=>{
@@ -117,6 +118,20 @@ export class HttphandlerService{
         })
         )
     }
+
+    // getfiltered():Observable<any>{
+        
+
+    //     return this.http.get(this.apiurl,{
+    //         headers : new HttpHeaders({
+    //             'jwt': 'asdf'           
+    //          }),
+    //     }).pipe(filter((rawdata :any,index : number)=>{
+    //             for(let data in rawdata){
+
+    //             }
+    //     }))
+    // }
 
     getstaffdetails(obj : any):Observable<any>{
         return this.http.get(this.apiurl).pipe(map((rawData : any)=>{
@@ -167,12 +182,9 @@ export class HttphandlerService{
  patchUser(id:any,obj:any){
     return this.http.patch(`https://leave-management-38570-default-rtdb.asia-southeast1.firebasedatabase.app/userdata/${id}.json`,obj)
 }
-
-
 patchLeaveData(id:any,obj:any):Observable<any>{
     return this.http.patch(`https://leave-management-38570-default-rtdb.asia-southeast1.firebasedatabase.app/userleavedata/${id}.json`,obj)
 }
-
 gethodstaffdet(dept:any):Observable<any>{
     return this.http.get(this.apiurl).pipe(map((rawdata : any)=>{
         let arr = [];
@@ -184,13 +196,34 @@ gethodstaffdet(dept:any):Observable<any>{
         return arr
     }))
 }
-
 deleteuser(id : any):Observable<any>{
     return this.http.delete(`https://leave-management-38570-default-rtdb.asia-southeast1.firebasedatabase.app/userdata/${id}.json`)
 }
 
+gettabledetails(){
 
+    let myParams = new HttpParams();
 
+    myParams.append('auth',this.currrentAuthResp?.idToken)
 
+    return this.http.get(this.apiurl,{
+        headers:new HttpHeaders({
+            'auth' : 'sigin'        
+        }),
+        params:myParams
 
+    }).pipe(map((data : any)=>{
+
+        console.log(data)
+        
+        let arr = [];
+
+        for(let user in data){
+            arr.push({...data[user],id:user})
+        }
+        
+        return arr;
+
+    }))
+}
 }
